@@ -41,8 +41,8 @@ def todo_create(request):
 
 
         todo = form.save(commit=False)
-        todo.user = request.user # Todo 객체에 user정보를 추가
-        todo.save() # user정보가 추가된 Todo 객체를 데이터베이스에 저장
+        todo.user = request.user # todo 객체에 user정보를 추가
+        todo.save() # user정보가 추가된 todo 객체를 데이터베이스에 저장
         return redirect(reverse('todo_info', kwargs={'todo_id': todo.pk}))
     context = {
         'form': form
